@@ -3,4 +3,10 @@
     <string name="luxevista_logo_image">LuxeVista Logo Image</string>
     <string name="luxevista_hotels">LuxeVista Hotels</string>
     <string name="v_1_0_1">V 1.0.1</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="luxevista_login">LuxeVista Login</string>
+    <string name="don_t_have_an_account_join_us_today">Don\'t have an account? Join us today!</string>
+    <string name="register">Register</string>
 </resources>
