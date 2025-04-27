@@ -1,9 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.LuxeVista" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Set the background color to white -->
+        <item name="android:background">@android:color/white</item>
+
+        <!-- Primary color (for action bar, status bar, etc.) -->
+        <item name="colorPrimary">@color/gold</item>
+
+        <!-- Primary dark color (used for dark areas, action bar etc.) -->
+        <item name="colorPrimaryDark">@color/black</item>
+
+        <!-- Accent color (for highlighting buttons, selections, etc.) -->
+        <item name="colorAccent">@color/light_brown</item>
+
+        <!-- Text color on background -->
+        <item name="android:textColor">@color/black</item>
+
+        <!-- Text color for links or highlighted text -->
+        <item name="android:textColorLink">@color/light_brown</item>
+
+        <!-- Customize ActionBar appearance (if needed) -->
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+        <!-- Button and background highlight color -->
+        <item name="colorControlActivated">@color/gold</item>
+
+        <!-- Background of cards, buttons, etc. -->
+
     </style>
 
+    <!-- Theme.LuxeVista inherits from Base.Theme.LuxeVista -->
     <style name="Theme.LuxeVista" parent="Base.Theme.LuxeVista" />
 </resources>

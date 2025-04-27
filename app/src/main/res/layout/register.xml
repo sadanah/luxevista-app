@@ -6,7 +6,8 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/register"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="LuxeVista Logo"
@@ -16,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055"
-        app:srcCompat="@drawable/LogoIcon_S" />
+        app:srcCompat="@drawable/logo_icon_small" />
 
     <TextView
         android:id="@+id/textView2"
@@ -33,14 +34,14 @@
         app:layout_constraintVertical_bias="0.198" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailInput"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:ems="10"
         android:fontFamily="serif"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/light_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -49,15 +50,15 @@
         app:layout_constraintVertical_bias="0.314" />
 
     <EditText
-        android:id="@+id/passwordConfirm"
+        android:id="@+id/passwordConInput"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:ems="10"
         android:fontFamily="serif"
-        android:hint="@string/password"
-        android:inputType="numberPassword"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
         android:textAlignment="textStart"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/light_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -66,15 +67,15 @@
         app:layout_constraintVertical_bias="0.672" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordInput"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:ems="10"
         android:fontFamily="serif"
         android:hint="@string/password"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:textAlignment="textStart"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/light_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -83,14 +84,14 @@
         app:layout_constraintVertical_bias="0.582" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/usernameInput"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:ems="10"
         android:fontFamily="serif"
         android:hint="@string/username"
         android:inputType="text"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/light_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -99,14 +100,14 @@
         app:layout_constraintVertical_bias="0.493" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/phoneInput"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:ems="10"
         android:fontFamily="serif"
         android:hint="Phone"
         android:inputType="phone"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/light_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -115,12 +116,13 @@
         app:layout_constraintVertical_bias="0.403" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/registerButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/loginButtonColor"
         android:fontFamily="serif"
         android:text="@string/register"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,7 +146,7 @@
         app:layout_constraintVertical_bias="0.869" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/loginButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/loginButtonColor"

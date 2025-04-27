@@ -2,5 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_black">#4D4D4D</color>
     <color name="loginButtonColor">#BD7202</color>
+    <color name="light_brown">#D1B298</color>
+    <color name="gold">#FFD700</color>
+
 </resources>
