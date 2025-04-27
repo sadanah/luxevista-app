@@ -2,15 +2,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:layout_margin="8dp"
-    android:elevation="6dp">
+    android:elevation="6dp"
+    android:gravity="center_vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"> <!-- Vertically center the contents -->
 
         <!-- ImageView for the logo/icon -->
         <ImageView
@@ -18,17 +20,17 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
-            android:contentDescription="Testimonial image"/>
+            android:contentDescription="Testimonial image" />
 
         <!-- TextView for the testimonial content -->
         <TextView
             android:id="@+id/testimonialText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sample testimonial text."
             android:textSize="16sp"
             android:textColor="@color/black"
-            android:gravity="center_horizontal" />
+            android:layout_marginStart="16dp" /> <!-- Margin between logo and text -->
 
     </LinearLayout>
 
