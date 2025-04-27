@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                 // Check if username and password match the predefined values
                 if (username.equals("user") && password.equals("pass123")) {
                     // If they match, navigate to MainActivity
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish(); // Optional: Close the LoginActivity to prevent the user from returning to it
                 } else {
