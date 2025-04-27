@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- White background -->
+    <item>
+        <shape>
+            <solid android:color="#FFFFFF"/> <!-- White background -->
+            <corners android:topLeftRadius="10dp" android:topRightRadius="10dp"/> <!-- Rounded top corners -->
+        </shape>
+    </item>
+</layer-list>

@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,21 +7,126 @@
     <!-- Section with background image -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/backgroundImage"
+        <!-- Scrollable content starts below -->
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/offer2"/>
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/backgroundImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/offer2"/>
+
+                <!--offers and promo-->
+                <ImageView
+                    android:id="@+id/imageOffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/offer1"
+                    android:background="@drawable/rounded_corners"
+                    android:scaleType="centerCrop"
+                    android:clickable="true"
+                    android:contentDescription="Offers and promotions"
+                    android:clipToOutline="true" />
+
+                <!--browse rooms-->
+                <ImageView
+                    android:id="@+id/imageBrowse"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:src="@drawable/offer1"
+                    android:background="@drawable/rounded_corners"
+                    android:scaleType="centerCrop"
+                    android:clickable="true"
+                    android:contentDescription="Browse rooms"
+                    android:clipToOutline="true" />
+
+                <!--facilities and services-->
+                <ImageView
+                    android:id="@+id/imageFacilitiesServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/offer1"
+                    android:background="@drawable/rounded_corners"
+                    android:scaleType="centerCrop"
+                    android:clickable="true"
+                    android:contentDescription="Facilities and services"
+                    android:clipToOutline="true" />
+
+                <ImageView
+                    android:id="@+id/imageAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/offer3"
+                    android:scaleType="centerCrop"
+                    android:clickable="true"
+                    android:contentDescription="About image"
+                    android:clipToOutline="true" />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="50dp"
+                    android:text="Escape to a luxurious haven, where nature meets elegance."
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:fontFamily="serif" />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:text="Testimonials"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:fontFamily="serif" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/testimonialsSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"/>
+
+                <LinearLayout
+                    android:id="@+id/dotIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp"
-            android:background="#80000000">
+            android:background="#DA1D1600"
+            android:gravity="center" >
 
             <ImageView
                 android:id="@+id/profileButton"
@@ -47,110 +152,60 @@
         </LinearLayout>
 
     </FrameLayout>
-
-    <!-- Scrollable content starts below -->
-    <androidx.core.widget.NestedScrollView
+    <!-- Bottom Navigation Bar (Fixed) -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/bottom_nav_shadow"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+        <ImageView
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/logo_icon"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Home"
+            android:clickable="true"/>
 
-            <!--offers amd promo-->
-            <ImageView
-                android:id="@+id/imageOffers"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="16dp"
-                android:src="@drawable/offer1"
-                android:background="@drawable/rounded_corners"
-                android:scaleType="centerCrop"
-                android:clickable="true"
-                android:contentDescription="Offers and promotions"
-                android:clipToOutline="true" />
+        <ImageView
+            android:id="@+id/browseButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/logo_icon"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Browse"
+            android:clickable="true"/>
 
-            <!--browse rooms-->
-            <ImageView
-                android:id="@+id/imageBrowse"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginHorizontal="16dp"
-                android:src="@drawable/offer1"
-                android:background="@drawable/rounded_corners"
-                android:scaleType="centerCrop"
-                android:clickable="true"
-                android:contentDescription="Offers and promotions"
-                android:clipToOutline="true" />
+        <ImageView
+            android:id="@+id/bookingsButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/logo_icon"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="My bookings"
+            android:clickable="true"/>
 
-            <!--facilities and services-->
-            <ImageView
-                android:id="@+id/imageFacilitiesServices"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="16dp"
-                android:src="@drawable/offer1"
-                android:background="@drawable/rounded_corners"
-                android:scaleType="centerCrop"
-                android:clickable="true"
-                android:contentDescription="Offers and promotions"
-                android:clipToOutline="true" />
+        <ImageView
+            android:id="@+id/infoButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/logo_icon"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Information"
+            android:clickable="true"/>
 
-            <ImageView
-                android:id="@+id/imageAbout"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="16dp"
-                android:src="@drawable/offer3"
-                android:scaleType="centerCrop"
-                android:clickable="true"
-                android:contentDescription="About image"
-                android:clipToOutline="true" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
-                android:text="Escape to a luxurious haven, where nature meets elegance."
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:fontFamily="serif" />
-
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginHorizontal="50dp"
-                android:text="Testimonials"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:fontFamily="serif" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/testimonialsSlider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:orientation="horizontal"/>
-
-            <LinearLayout
-                android:id="@+id/dotIndicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="16dp" />
-
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-</LinearLayout>
+</RelativeLayout>
