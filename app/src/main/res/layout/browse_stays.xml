@@ -28,11 +28,11 @@
 
                 <!--offers and promo-->
                 <ImageView
-                    android:id="@+id/imageOffers"
+                    android:id="@+id/imageBrowse"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_margin="16dp"
-                    android:src="@drawable/offers"
+                    android:src="@drawable/browse_stays"
                     android:background="@drawable/rounded_corners"
                     android:scaleType="centerCrop"
                     android:clickable="true"
@@ -44,37 +44,26 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="32dp"
                     android:layout_marginHorizontal="50dp"
-                    android:text="Latest Offers &amp; Promotions"
+                    android:text="Find the perfect getaway!"
                     android:textSize="28sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:fontFamily="serif"
                     android:backgroundTint="@color/gold"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="50dp"
-                    android:padding="10dp"
-                    android:fontFamily="serif"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="50dp"
-                    android:backgroundTint="@color/gold"
-                    android:text="Explore all the latest deals for credit cards, deluxe suits, and more!"/>
-
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="125dp"
-                    android:layout_marginHorizontal="50dp"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="25dp"
                     android:layout_marginBottom="25dp">
 
                     <ImageView
-                        android:id="@+id/offer1"
+                        android:id="@+id/room1"
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
-                        android:src="@drawable/offer1"
+                        android:layout_height="200dp"
+                        android:src="@drawable/room5"
                         android:background="@drawable/rounded_corners"
                         android:scaleType="centerCrop"
                         android:clickable="true"
@@ -84,36 +73,36 @@
                     <TextView
                         android:layout_width="296dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="16dp"
-                        android:backgroundTint="#5EFDF0D5"
-                        android:textColor="@color/black"
+                        android:layout_margin="32dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:textColor="@color/white"
                         android:fontFamily="serif"
-                        android:text="30% OFF on Credit Cards!"
-                        android:textSize="28sp"
+                        android:text="Deluxe Suite"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
                     <Button
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:text="Claim Now!"
+                        android:text="Book Now!"
                         android:backgroundTint="@color/loginButtonColor"
                         android:fontFamily="serif"
                         android:layout_gravity="bottom|end"
                         android:textSize="16sp"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="20dp"/>
 
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="125dp"
-                    android:layout_marginHorizontal="50dp"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="25dp"
                     android:layout_marginBottom="25dp">
 
                     <ImageView
-                        android:id="@+id/offer2"
+                        android:id="@+id/room2"
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
-                        android:src="@drawable/offer1"
+                        android:layout_height="200dp"
+                        android:src="@drawable/room3"
                         android:background="@drawable/rounded_corners"
                         android:scaleType="centerCrop"
                         android:clickable="true"
@@ -123,36 +112,36 @@
                     <TextView
                         android:layout_width="296dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="16dp"
-                        android:backgroundTint="#5EFDF0D5"
-                        android:textColor="@color/black"
+                        android:layout_margin="32dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:textColor="@color/white"
                         android:fontFamily="serif"
-                        android:text="Double the Loyalty!"
-                        android:textSize="28sp"
+                        android:text="Secret Getaway"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
                     <Button
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:text="Claim Now!"
+                        android:text="Book Now!"
                         android:backgroundTint="@color/loginButtonColor"
                         android:fontFamily="serif"
                         android:layout_gravity="bottom|end"
                         android:textSize="16sp"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="20dp"/>
 
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="125dp"
-                    android:layout_marginHorizontal="50dp"
-                    android:layout_marginBottom="60dp">
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="25dp">
 
                     <ImageView
-                        android:id="@+id/offer3"
+                        android:id="@+id/room3"
                         android:layout_width="match_parent"
-                        android:layout_height="125dp"
-                        android:src="@drawable/offer1"
+                        android:layout_height="200dp"
+                        android:src="@drawable/room2"
                         android:background="@drawable/rounded_corners"
                         android:scaleType="centerCrop"
                         android:clickable="true"
@@ -162,23 +151,101 @@
                     <TextView
                         android:layout_width="296dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="16dp"
-                        android:backgroundTint="#5EFDF0D5"
-                        android:textColor="@color/black"
+                        android:layout_margin="32dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:textColor="@color/white"
                         android:fontFamily="serif"
-                        android:text="30% OFF on Credit Cards!"
-                        android:textSize="28sp"
+                        android:text="Paradise Lost"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
                     <Button
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:text="Claim Now!"
+                        android:text="Book Now!"
                         android:backgroundTint="@color/loginButtonColor"
                         android:fontFamily="serif"
                         android:layout_gravity="bottom|end"
                         android:textSize="16sp"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="20dp"/>
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="25dp">
+
+                    <ImageView
+                        android:id="@+id/room4"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/room4"
+                        android:background="@drawable/rounded_corners"
+                        android:scaleType="centerCrop"
+                        android:clickable="true"
+                        android:contentDescription="Offers 1"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="32dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:textColor="@color/white"
+                        android:fontFamily="serif"
+                        android:text="Family Fiesta"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Book Now!"
+                        android:backgroundTint="@color/loginButtonColor"
+                        android:fontFamily="serif"
+                        android:layout_gravity="bottom|end"
+                        android:textSize="16sp"
+                        android:layout_margin="20dp"/>
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="25dp">
+
+                    <ImageView
+                        android:id="@+id/room5"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/room1"
+                        android:background="@drawable/rounded_corners"
+                        android:scaleType="centerCrop"
+                        android:clickable="true"
+                        android:contentDescription="Offers 1"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="32dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:textColor="@color/white"
+                        android:fontFamily="serif"
+                        android:text="Relaxed Stay"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Book Now!"
+                        android:backgroundTint="@color/loginButtonColor"
+                        android:fontFamily="serif"
+                        android:layout_gravity="bottom|end"
+                        android:textSize="16sp"
+                        android:layout_margin="20dp"/>
 
                 </FrameLayout>
 

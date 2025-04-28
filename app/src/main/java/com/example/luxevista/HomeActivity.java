@@ -1,8 +1,11 @@
 package com.example.luxevista;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +34,16 @@ public class HomeActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         EdgeToEdge.enable(this);
         setContentView(R.layout.home);
+
+        ImageView offersButton = findViewById(R.id.imageOffers); // Ensure this ID matches the button in login.xml
+        offersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start RegisterActivity when the button is clicked
+                Intent intent = new Intent(HomeActivity.this, OffersPromoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Apply insets for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.home), (v, insets) -> {

@@ -34,6 +34,10 @@
 
         </activity>
         <activity
+            android:name=".OffersPromoActivity">
+
+        </activity>
+        <activity
             android:name=".MainActivity">
         </activity>
 
