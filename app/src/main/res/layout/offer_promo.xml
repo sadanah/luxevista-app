@@ -1,0 +1,277 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Section with background image -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp">
+
+        <!-- Scrollable content starts below -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:layout_marginTop="83dp"
+            android:backgroundTint="@color/gold">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:backgroundTint="@color/gold"
+                android:layout_marginTop="20dp">
+
+                <!--offers and promo-->
+                <ImageView
+                    android:id="@+id/imageOffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/offers"
+                    android:background="@drawable/rounded_corners"
+                    android:scaleType="centerCrop"
+                    android:clickable="true"
+                    android:contentDescription="Offers and promotions"
+                    android:clipToOutline="true" />
+
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:text="Latest Offers &amp; Promotions"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:backgroundTint="@color/gold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="50dp"
+                    android:padding="10dp"
+                    android:fontFamily="serif"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="50dp"
+                    android:backgroundTint="@color/gold"
+                    android:text="Explore all the latest deals for credit cards, deluxe suits, and more!"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginBottom="25dp">
+
+                    <ImageView
+                        android:id="@+id/offer1"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:src="@drawable/offer1"
+                        android:background="@drawable/rounded_corners"
+                        android:scaleType="centerCrop"
+                        android:clickable="true"
+                        android:contentDescription="Offers 1"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:backgroundTint="#5E000000"
+                        android:fontFamily="serif"
+                        android:text="30% OFF on Credit Cards!"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Claim Now!"
+                        android:backgroundTint="@color/loginButtonColor"
+                        android:fontFamily="serif"
+                        android:layout_gravity="bottom|end"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"/>
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginBottom="25dp">
+
+                    <ImageView
+                        android:id="@+id/offer2"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:src="@drawable/offer1"
+                        android:background="@drawable/rounded_corners"
+                        android:scaleType="centerCrop"
+                        android:clickable="true"
+                        android:contentDescription="Offers 1"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:backgroundTint="#5E000000"
+                        android:fontFamily="serif"
+                        android:text="Double the Loyalty!"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Claim Now!"
+                        android:backgroundTint="@color/loginButtonColor"
+                        android:fontFamily="serif"
+                        android:layout_gravity="bottom|end"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"/>
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginBottom="60dp">
+
+                    <ImageView
+                        android:id="@+id/offer3"
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:src="@drawable/offer1"
+                        android:background="@drawable/rounded_corners"
+                        android:scaleType="centerCrop"
+                        android:clickable="true"
+                        android:contentDescription="Offers 1"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:backgroundTint="#5E000000"
+                        android:fontFamily="serif"
+                        android:text="30% OFF on Credit Cards!"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Claim Now!"
+                        android:backgroundTint="@color/loginButtonColor"
+                        android:fontFamily="serif"
+                        android:layout_gravity="bottom|end"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="#DA1D1600"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/profileButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_pfp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerCrop"
+                android:contentDescription="Profile"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:text="Find Your Stay!"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="serif"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+    <!-- Bottom Navigation Bar (Fixed) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/bottom_nav_shadow"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Home"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/browseButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_info"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Browse"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/bookingsButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_bookings"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="My bookings"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/infoButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_info"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Information"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
