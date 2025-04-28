@@ -2,7 +2,7 @@
     <!-- White background -->
     <item>
         <shape>
-            <solid android:color="#FFFFFF"/> <!-- White background -->
+            <solid android:color="#D0E0C08A"/> <!--D0F8ECD8 White background -->
             <corners android:topLeftRadius="10dp" android:topRightRadius="10dp"/> <!-- Rounded top corners -->
         </shape>
     </item>

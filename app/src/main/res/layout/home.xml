@@ -20,14 +20,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:backgroundTint="@color/gold">
 
                 <ImageView
                     android:id="@+id/backgroundImage"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/offer2"/>
+                    android:src="@drawable/home_bg"/>
 
                 <!--offers and promo-->
                 <ImageView
@@ -35,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_margin="16dp"
-                    android:src="@drawable/offer1"
+                    android:src="@drawable/offers"
                     android:background="@drawable/rounded_corners"
                     android:scaleType="centerCrop"
                     android:clickable="true"
@@ -48,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginHorizontal="16dp"
-                    android:src="@drawable/offer1"
+                    android:src="@drawable/browse_stays"
                     android:background="@drawable/rounded_corners"
                     android:scaleType="centerCrop"
                     android:clickable="true"
@@ -61,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_margin="16dp"
-                    android:src="@drawable/offer1"
+                    android:src="@drawable/explore_fs"
                     android:background="@drawable/rounded_corners"
                     android:scaleType="centerCrop"
                     android:clickable="true"
@@ -73,22 +74,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_margin="16dp"
-                    android:src="@drawable/offer3"
-                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_location"
                     android:clickable="true"
                     android:contentDescription="About image"
-                    android:clipToOutline="true" />
+                    android:clipToOutline="true"
+                    android:backgroundTint="@color/gold"/>
 
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="50dp"
                     android:layout_marginBottom="32dp"
-                    android:text="Escape to a luxurious haven, where nature meets elegance."
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
+                    android:fontFamily="serif"
                     android:gravity="center"
-                    android:fontFamily="serif" />
+                    android:text="Escape to a luxurious haven, where nature meets elegance."
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:backgroundTint="@color/gold"/>
 
                 <TextView
                     android:layout_width="300dp"
@@ -101,7 +103,8 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:gravity="center"
-                    android:fontFamily="serif" />
+                    android:fontFamily="serif"
+                    android:backgroundTint="@color/gold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/testimonialsSlider"
@@ -126,6 +129,7 @@
                     android:padding="10dp"
                     android:fontFamily="serif"
                     android:textSize="16sp"
+                    android:backgroundTint="@color/gold"
                     android:text="Any inquiries or specific information? We're here to help."/>
 
                 <Button
@@ -141,28 +145,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="50dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:backgroundTint="@color/gold">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginTop="32dp">
+                        android:layout_marginTop="32dp"
+                        android:backgroundTint="@color/gold">
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:src="@drawable/logo_icon"
+                            android:src="@drawable/ic_location"
                             android:layout_weight="1"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/gold"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="serif"
                             android:textSize="14sp"
-                            android:text="123/6, Creseter Palace, Colombo." />
+                            android:text="123/6, Creseter Palace, Colombo."
+                            android:backgroundTint="@color/gold"/>
 
                     </LinearLayout>
 
@@ -171,21 +179,24 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginVertical="16dp" >
+                        android:layout_marginVertical="16dp"
+                        android:backgroundTint="@color/gold">
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:src="@drawable/logo_icon"
+                            android:src="@drawable/ic_phone"
                             android:layout_weight="1"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/gold"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="serif"
                             android:textSize="14sp"
-                            android:text="+94 70 111 1111" />
+                            android:text="+94 70 111 1111"
+                            android:backgroundTint="@color/gold"/>
 
                     </LinearLayout>
 
@@ -194,21 +205,24 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginBottom="32dp">
+                        android:layout_marginBottom="32dp"
+                        android:backgroundTint="@color/gold">
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:src="@drawable/logo_icon"
+                            android:src="@drawable/ic_email"
                             android:layout_weight="1"
-                            android:layout_marginEnd="10dp"/>
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/gold"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="serif"
                             android:textSize="14sp"
-                            android:text="luxevista@outlook.com" />
+                            android:text="luxevista@outlook.com"
+                            android:backgroundTint="@color/gold"/>
 
                     </LinearLayout>
 
@@ -230,7 +244,7 @@
                 android:id="@+id/profileButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/logo_icon"
+                android:src="@drawable/ic_pfp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="centerCrop"
                 android:contentDescription="Profile"
@@ -265,7 +279,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@drawable/logo_icon"
+            android:src="@drawable/ic_home"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="centerInside"
             android:contentDescription="Home"
@@ -276,7 +290,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@drawable/logo_icon"
+            android:src="@drawable/ic_info"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="centerInside"
             android:contentDescription="Browse"
@@ -287,7 +301,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@drawable/logo_icon"
+            android:src="@drawable/ic_bookings"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="centerInside"
             android:contentDescription="My bookings"
@@ -298,7 +312,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@drawable/logo_icon"
+            android:src="@drawable/ic_info"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="centerInside"
             android:contentDescription="Information"

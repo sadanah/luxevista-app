@@ -51,9 +51,9 @@ public class HomeActivity extends AppCompatActivity {
 
         // Initialize testimonial list and add sample data
         testimonialList = new ArrayList<>();
-        testimonialList.add(new Testimonial(R.drawable.logo_icon, "This is a great hotel, very friendly staff!"));
-        testimonialList.add(new Testimonial(R.drawable.logo_icon, "The service was excellent. I loved the nature blending with modern luxury."));
-        testimonialList.add(new Testimonial(R.drawable.logo_icon, "The food was good. The hotel ate and left no crumbs."));
+        testimonialList.add(new Testimonial(R.drawable.profile1, "This is a great hotel, very friendly staff!"));
+        testimonialList.add(new Testimonial(R.drawable.profile2, "The service was excellent. I loved the nature blending with modern luxury."));
+        testimonialList.add(new Testimonial(R.drawable.profile3, "The food was good. The hotel ate and left no crumbs."));
 
         Log.d("HomeActivity", "Testimonials size: " + testimonialList.size());
 
