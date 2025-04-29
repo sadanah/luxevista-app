@@ -81,7 +81,19 @@
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="85dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:fontFamily="serif"
+                        android:text="Starting at Rs.75,000 per night."
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
                     <Button
+                        android:id="@+id/book_deluxe"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:text="Book Now!"
@@ -120,7 +132,19 @@
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="85dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:fontFamily="serif"
+                        android:text="Starting at Rs.45,000 per night."
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
                     <Button
+                        android:id="@+id/book_secret_getaway"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:text="Book Now!"
@@ -159,7 +183,19 @@
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="85dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:fontFamily="serif"
+                        android:text="Starting at Rs.28,000 per night."
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
                     <Button
+                        android:id="@+id/book_paradise_lost"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:text="Book Now!"
@@ -198,7 +234,19 @@
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="85dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:fontFamily="serif"
+                        android:text="Starting at Rs.35,000 per night."
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
                     <Button
+                        android:id="@+id/book_family_fiesta"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:text="Book Now!"
@@ -213,7 +261,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginHorizontal="25dp"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="32dp">
 
                     <ImageView
                         android:id="@+id/room5"
@@ -237,7 +285,19 @@
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="85dp"
+                        android:backgroundTint="#5E2C2C2C"
+                        android:fontFamily="serif"
+                        android:text="Starting at Rs.18,000 per night."
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
                     <Button
+                        android:id="@+id/book_relaxed_stay"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:text="Book Now!"
@@ -248,6 +308,29 @@
                         android:layout_margin="20dp"/>
 
                 </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:padding="10dp"
+                    android:fontFamily="serif"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/gold"
+                    android:text="Any inquiries or specific information? We're here to help."/>
+
+                <Button
+                    android:id="@+id/contact"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Us"
+                    android:backgroundTint="@color/loginButtonColor"
+                    android:fontFamily="serif"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="75dp"/>
+
 
             </LinearLayout>
 
@@ -265,7 +348,7 @@
                 android:id="@+id/profileButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_pfp"
+                android:src="@drawable/profile"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="centerCrop"
                 android:contentDescription="Profile"

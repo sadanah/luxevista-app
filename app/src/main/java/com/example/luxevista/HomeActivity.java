@@ -45,6 +45,16 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        ImageView browseButton = findViewById(R.id.imageBrowse); // Ensure this ID matches the button in login.xml
+        browseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start RegisterActivity when the button is clicked
+                Intent intent = new Intent(HomeActivity.this, BrowseStaysActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Apply insets for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.home), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

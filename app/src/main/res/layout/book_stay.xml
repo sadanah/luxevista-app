@@ -1,0 +1,277 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/offer_promo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Section with background image -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp">
+
+        <!-- Scrollable content starts below -->
+        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <!-- Topic -->
+                <TextView
+                    android:id="@+id/topic_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book Your Stay"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:layout_marginTop="85dp"
+                    android:paddingBottom="32dp"/>
+
+                <!-- Room Type -->
+                <TextView
+                    android:id="@+id/stay_type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Stay Type"
+                    android:textSize="18sp"
+                    android:fontFamily="serif"
+                    android:paddingBottom="32dp"/>
+
+                <!-- Stay Dates -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Stay Dates:"
+                    android:fontFamily="serif"/>
+
+                <EditText
+                    android:id="@+id/start_date"
+                    android:layout_width="200dp"
+                    android:layout_height="70dp"
+                    android:hint="Start Date (dd/mm/yyyy)"
+                    android:fontFamily="serif"
+                    android:inputType="date" />
+
+                <EditText
+                    android:id="@+id/end_date"
+                    android:layout_width="200dp"
+                    android:layout_height="70dp"
+                    android:hint="End Date (dd/mm/yyyy)"
+                    android:fontFamily="serif"
+                    android:inputType="date"
+                    android:layout_marginBottom="32dp"/>
+
+                <!-- Check-in/Check-out Time Selection -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Select Check-in Time:" />
+
+                <RadioGroup
+                    android:id="@+id/check_in_time_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/morning_checkin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Morning"
+                        android:fontFamily="serif"/>
+
+                    <RadioButton
+                        android:id="@+id/evening_checkin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Evening"
+                        android:fontFamily="serif"/>
+                </RadioGroup>
+
+                <!-- Number of Persons -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Number of Persons:"
+                    android:fontFamily="serif"/>
+
+                <EditText
+                    android:id="@+id/num_persons"
+                    android:layout_width="200dp"
+                    android:layout_height="70dp"
+                    android:hint="Enter number of persons"
+                    android:inputType="number" />
+
+                <!-- Room Number Selection -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Select Room Numbers:"
+                    android:fontFamily="serif"/>
+
+                <GridLayout
+                    android:id="@+id/room_numbers_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="5"
+                    android:padding="8dp">
+
+                    <!-- You will dynamically add Buttons or CheckBoxes in Java -->
+                </GridLayout>
+
+                <!-- Selected Rooms Display -->
+                <TextView
+                    android:id="@+id/selected_rooms_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selected Rooms: None"
+                    android:fontFamily="serif"
+                    android:padding="8dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/price_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price: "
+                    android:fontFamily="serif"
+                    android:textSize="18dp"
+                    android:padding="8dp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Make Payment Button -->
+                <Button
+                    android:id="@+id/make_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Make Payment"
+                    android:backgroundTint="@color/loginButtonColor"
+                    android:fontFamily="serif"
+                    android:layout_marginBottom="32dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:padding="10dp"
+                    android:fontFamily="serif"
+                    android:textSize="16sp"
+                    android:text="Any inquiries or specific information? We're here to help."/>
+
+                <Button
+                    android:id="@+id/contact"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Us"
+                    android:backgroundTint="@color/loginButtonColor"
+                    android:fontFamily="serif"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="75dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="#DA1D1600"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/profileButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerCrop"
+                android:contentDescription="Profile"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:text="Find Your Stay!"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="serif"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+    <!-- Bottom Navigation Bar (Fixed) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/bottom_nav_shadow"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Home"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/browseButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_info"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Browse"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/bookingsButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_bookings"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="My bookings"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/infoButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_info"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Information"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
