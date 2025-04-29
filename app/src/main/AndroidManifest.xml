@@ -53,6 +53,10 @@
             android:name=".ViewBookingsActivity">
 
         </activity>
+        <activity
+            android:name=".ProfileActivity">
+
+        </activity>
 
     </application>
 
