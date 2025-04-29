@@ -23,6 +23,6 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();  // Close the SplashActivity so it's not shown again when the user presses back
             }
-        }, 2000);  // 2000 milliseconds = 2 seconds
+        }, 1000);  // 2000 milliseconds = 2 seconds
     }
 }

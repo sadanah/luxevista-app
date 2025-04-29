@@ -14,12 +14,15 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            android:contentDescription="booking scroll view">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"                >
+                android:orientation="vertical"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="100dp">
                 <!-- Booking Section Header -->
                 <TextView
                     android:id="@+id/bookingHeader"
@@ -27,7 +30,8 @@
                     android:layout_height="wrap_content"
                     android:text="My Bookings"
                     android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:textSize="28sp"
                     android:layout_marginTop="32dp"
                     android:visibility="gone" />
 
@@ -65,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:visibility="gone">
                 </LinearLayout>
             </LinearLayout>

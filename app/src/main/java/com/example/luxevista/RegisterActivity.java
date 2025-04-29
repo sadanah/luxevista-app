@@ -72,8 +72,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavHelper.setupBottomNavigation(this);
-
     }
     // Method to check if the email is valid (contains "@" and ".")
     private boolean isValidEmail(String email) {

@@ -179,7 +179,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_info"
+            android:src="@drawable/ic_info2"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="centerInside"
             android:contentDescription="Information"

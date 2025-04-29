@@ -58,9 +58,7 @@ public class ViewBookingsActivity extends AppCompatActivity {
             }
         }
 
-        browseStaysButton.setOnClickListener(v -> {
-            // Handle browse stays button logic here
-        });
+        BottomNavHelper.setupBottomNavigation(this);
     }
 
     private List<Booking> generateSampleBookings() {
