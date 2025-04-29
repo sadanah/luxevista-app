@@ -32,7 +32,7 @@ public class OffersPromoActivity extends AppCompatActivity {
             });
         }
 
-
+        BottomNavHelper.setupBottomNavigation(this);
 
     }
 }

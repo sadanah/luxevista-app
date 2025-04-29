@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BrowseStaysActivity extends AppCompatActivity {
+public class ViewBookingsActivity extends AppCompatActivity {
 
     private Button bookDeluxeButton, bookFamilyFiestaButton, bookSecretGetawayButton, bookParadiseLostButton, bookRelaxedStayButton;
 
@@ -57,11 +57,12 @@ public class BrowseStaysActivity extends AppCompatActivity {
                 openBookStayActivity("Relaxed Stay");
             }
         });
+
         BottomNavHelper.setupBottomNavigation(this);
     }
 
     private void openBookStayActivity(String stayType) {
-        Intent intent = new Intent(BrowseStaysActivity.this, BookStayActivity.class);
+        Intent intent = new Intent(ViewBookingsActivity.this, BookStayActivity.class);
         intent.putExtra("stay_type", stayType);
         startActivity(intent);
     }

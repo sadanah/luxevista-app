@@ -65,12 +65,14 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 // If they match, navigate to MainActivity
                 Toast.makeText(RegisterActivity.this, "registration successful!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish(); // Optional: Close the LoginActivity to prevent the user from returning to it
 
             }
         });
+
+        BottomNavHelper.setupBottomNavigation(this);
 
     }
     // Method to check if the email is valid (contains "@" and ".")

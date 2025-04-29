@@ -68,6 +68,8 @@ public class BookStayActivity extends AppCompatActivity {
                 makePayment();
             }
         });
+
+        BottomNavHelper.setupBottomNavigation(this);
     }
 
     private void addRoomNumberButtons() {

@@ -98,6 +98,9 @@ public class HomeActivity extends AppCompatActivity {
                 updateDots(currentPosition);
             }
         });
+
+        BottomNavHelper.setupBottomNavigation(this);
+
     }
 
     // Create the dots indicator based on the number of items in the list
