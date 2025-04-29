@@ -13,7 +13,6 @@ public class BottomNavHelper {
         ImageView browseButton = activity.findViewById(R.id.browseButton);
         ImageView bookingsButton = activity.findViewById(R.id.bookingsButton);
         ImageView infoButton = activity.findViewById(R.id.infoButton);
-
         //top nav options
         ImageView profileButton = activity.findViewById(R.id.profileButton);
         Button browseButtonTop = activity.findViewById(R.id.browseButtonTop);
