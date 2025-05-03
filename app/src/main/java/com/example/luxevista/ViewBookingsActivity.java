@@ -63,9 +63,7 @@ public class ViewBookingsActivity extends AppCompatActivity {
 
     private List<Booking> generateSampleBookings() {
         List<Booking> bookings = new ArrayList<>();
-        bookings.add(new Booking("2025-05-10", "Deluxe Room", "101", "2:00 PM", "11:00 AM", 2));
-        bookings.add(new Booking("2025-06-01", "Suite", "203", "3:00 PM", "12:00 PM", 3));
-        bookings.add(new Booking("2025-07-15", "Standard Room", "305", "1:00 PM", "10:00 AM", 1));
+
         return bookings;
     }
 }

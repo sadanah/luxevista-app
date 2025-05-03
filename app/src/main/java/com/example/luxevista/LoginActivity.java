@@ -63,16 +63,18 @@ public class LoginActivity extends AppCompatActivity {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
+                DBHelper dbHelper = new DBHelper(LoginActivity.this);
+                dbHelper.login(username, password, "Customer");
                 // Check if username and password match the predefined values
-                if (username.equals("user") && password.equals("pass123")) {
+                //if (username.equals("user") && password.equals("pass123")) {
                     // If they match, navigate to MainActivity
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                    finish(); // Optional: Close the LoginActivity to prevent the user from returning to it
-                } else {
+                    //Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    //startActivity(intent);
+                    //finish(); // Optional: Close the LoginActivity to prevent the user from returning to it
+                //} else {
                     // If they don't match, show an error message
-                    Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                }
+                    //Toast.makeText(LoginActivity.this, "Enter all details!", Toast.LENGTH_SHORT).show();
+                //}
             }
         });
     }

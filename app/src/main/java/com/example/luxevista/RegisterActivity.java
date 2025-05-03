@@ -2,6 +2,7 @@ package com.example.luxevista;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,29 +46,41 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = passwordConInput.getText().toString();
                 String passwordCon = passwordConInput.getText().toString();
 
+                boolean success=false;
+
                 // Check if username and password match the predefined values
                 if(email.isEmpty() || phone.isEmpty() || username.isEmpty() || password.isEmpty() || passwordCon.isEmpty()){
                     Toast.makeText(RegisterActivity.this, "Enter all details", Toast.LENGTH_SHORT).show();
                     return;
-                }
-
-                if(!isValidEmail(email)){
+                } else if(!isValidEmail(email)){
                     Toast.makeText(RegisterActivity.this, "Invalid email", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                if(!isValidPhone(phone)){
+                }else if(!isValidPhone(phone)){
                     Toast.makeText(RegisterActivity.this, "Invalid phone number", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                if (!(password.equals(passwordCon))) {
+                }else if (!(password.equals(passwordCon))) {
                     Toast.makeText(RegisterActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
+                } else{
+                    success=true;
                 }
-                // If they match, navigate to MainActivity
-                Toast.makeText(RegisterActivity.this, "registration successful!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish(); // Optional: Close the LoginActivity to prevent the user from returning to it
+
+                if(success == true){
+                    // If they match, navigate to MainActivity
+                    Toast.makeText(RegisterActivity.this, "Invalid username!", Toast.LENGTH_SHORT).show();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                            // After 2 seconds, move to LoginActivity
+                              // Close the SplashActivity so it's not shown again when the user presses back
+                        }
+                    }, 2000);
+
+                }
 
             }
         });
