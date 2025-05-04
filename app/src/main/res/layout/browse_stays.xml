@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <!-- Section with background image -->
     <FrameLayout
         android:layout_width="match_parent"
@@ -15,8 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fillViewport="true"
-            android:layout_marginTop="83dp"
             android:backgroundTint="@color/gold">
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -24,31 +26,32 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:backgroundTint="@color/gold"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="100dp">
 
                 <!--offers and promo-->
-                <ImageView
-                    android:id="@+id/imageBrowse"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_margin="16dp"
-                    android:src="@drawable/browse_stays"
-                    android:background="@drawable/rounded_corners"
-                    android:scaleType="centerCrop"
-                    android:clickable="true"
-                    android:contentDescription="Offers and promotions"
-                    android:clipToOutline="true" />
-
 
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginHorizontal="50dp"
+                    android:text="Browse Stays"
+                    android:textSize="38sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:backgroundTint="@color/gold"/>
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
                     android:layout_marginHorizontal="50dp"
                     android:text="Find the perfect getaway!"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
                     android:textColor="@color/black"
                     android:fontFamily="serif"
                     android:backgroundTint="@color/gold"/>
@@ -331,7 +334,6 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="75dp"/>
 
-
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
@@ -424,5 +426,7 @@
             android:clickable="true"/>
 
     </LinearLayout>
+
+
 
 </RelativeLayout>
