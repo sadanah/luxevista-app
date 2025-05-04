@@ -2,6 +2,7 @@ package com.example.luxevista;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -160,4 +161,19 @@ public class DBHelper extends SQLiteOpenHelper{
             Toast.makeText(context, "DB: Add Booking Success", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public boolean validateLogin(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM logins WHERE username = ? AND password = ?";
+        Cursor cursor = db.rawQuery(query, new String[] {username, password});
+
+        boolean result = false;
+        if (cursor.moveToFirst()) {
+            // Found a matching login
+            result = true;
+        }
+        cursor.close();
+        return result;
+    }
+
 }

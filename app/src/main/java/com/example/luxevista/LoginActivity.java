@@ -2,9 +2,11 @@ package com.example.luxevista;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,17 +64,23 @@ public class LoginActivity extends AppCompatActivity {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
+                DBHelper dbHelper = new DBHelper(LoginActivity.this);
+                Boolean loginSuccess = dbHelper.validateLogin(username, password);
 
-                // Check if username and password match the predefined values
-                //if (username.equals("user") && password.equals("pass123")) {
-                    // If they match, navigate to MainActivity
-                    //Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    //startActivity(intent);
-                    //finish(); // Optional: Close the LoginActivity to prevent the user from returning to it
-                //} else {
-                    // If they don't match, show an error message
-                    //Toast.makeText(LoginActivity.this, "Enter all details!", Toast.LENGTH_SHORT).show();
-                //}
+                if(loginSuccess==true){
+                    Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }, 1000);
+                }else{
+                    Toast.makeText(LoginActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
