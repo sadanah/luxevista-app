@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Booking Details -->
+    <TextView
+        android:id="@+id/bookingDetailsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Booking Details Here"
+        android:textSize="16sp"
+        android:paddingBottom="16dp" />
+
+    <!-- Payment Options -->
+    <RadioGroup
+        android:id="@+id/paymentOptionsGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/paypalOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PayPal" />
+
+        <RadioButton
+            android:id="@+id/payoneerOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payoneer" />
+
+        <RadioButton
+            android:id="@+id/cardOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Card" />
+    </RadioGroup>
+
+</LinearLayout>

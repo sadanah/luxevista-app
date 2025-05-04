@@ -60,20 +60,24 @@
 
                 <EditText
                     android:id="@+id/start_date"
-                    android:layout_width="200dp"
+                    android:layout_width="250dp"
                     android:layout_height="70dp"
-                    android:hint="Start Date (dd/mm/yyyy)"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="false"
                     android:fontFamily="serif"
-                    android:inputType="date"
-                    android:background="@android:color/transparent" />
+                    android:hint="Start Date (dd/MM/yyyy)" />
 
                 <EditText
                     android:id="@+id/end_date"
-                    android:layout_width="200dp"
+                    android:layout_width="250dp"
                     android:layout_height="70dp"
-                    android:hint="End Date (dd/mm/yyyy)"
+                    android:textAlignment="center"
+                    android:hint="End Date (dd/MM/yyyy)"
+                    android:focusable="false"
+                    android:clickable="true"
                     android:fontFamily="serif"
-                    android:inputType="date"
                     android:background="@android:color/transparent"
                     android:layout_marginBottom="32dp" />
 
@@ -96,15 +100,16 @@
                         android:id="@+id/morning_checkin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Morning"
+                        android:text="10:00 AM"
                         android:fontFamily="serif" />
 
                     <RadioButton
                         android:id="@+id/evening_checkin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Evening"
+                        android:text="10:00 PM"
                         android:fontFamily="serif" />
+
                 </RadioGroup>
 
                 <!-- Number of Persons -->

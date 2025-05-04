@@ -104,7 +104,6 @@ public class DBHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-
     void addRegistration(String email, String phone, String username, String password, String role){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -137,13 +136,19 @@ public class DBHelper extends SQLiteOpenHelper{
         }
     }
 
+    public Cursor getUserData(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM logins WHERE username=? AND password=?", new String[]{username, password});
+    }
+
+
     void addStay(int stayType, int stayPrice, boolean stayAvailability){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         cv.put("stay_type", stayType);
         cv.put("stay_price", stayPrice);
-        cv.put("stay_availability", stayAvailability ? 1 : 0); // SQLite uses 0 and 1 for BOOLEAN
+        cv.put("stay_availability", stayAvailability ? 1 : 0);
         long result = db.insert("stays", null, cv);
         if(result == -1){
             Toast.makeText(context, "DB: Add Stay Failed", Toast.LENGTH_SHORT).show();
@@ -152,21 +157,41 @@ public class DBHelper extends SQLiteOpenHelper{
         }
     }
 
-    void addPayment(double payAmount, String payProvider, String timestamp){
+    public int addPayment(int payAmount, String payProvider) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         cv.put("pay_amount", payAmount);
         cv.put("pay_provider", payProvider);
-        cv.put("timestamp", timestamp); // e.g., "2025-04-29 14:30:00"
+        cv.put("timestamp", System.currentTimeMillis());
+
         long result = db.insert("payments", null, cv);
-        if(result == -1){
+
+        if (result == -1) {
             Toast.makeText(context, "DB: Add Payment Failed", Toast.LENGTH_SHORT).show();
+            return -1;
         } else {
-            Toast.makeText(context, "DB: Add Payment Success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "DB: Payment Recorded", Toast.LENGTH_SHORT).show();
+            return (int) result; // return generated pay_id
         }
     }
 
+    public void updateStayAvailability(int stayId, boolean isAvailable) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("stay_availability", isAvailable ? 1 : 0);
+
+        int rows = db.update("stays", cv, "stay_id = ?", new String[]{String.valueOf(stayId)});
+
+        if (rows > 0) {
+            Toast.makeText(context, "DB: Stay availability updated", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "DB: Stay availability update failed", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    //create booking record
     void addBooking(int userId, int stayId, int payId, String checkIn, String checkOut, int personCount){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -174,8 +199,8 @@ public class DBHelper extends SQLiteOpenHelper{
         cv.put("user_id", userId);
         cv.put("stay_id", stayId);
         cv.put("pay_id", payId);
-        cv.put("check_in", checkIn);   // e.g., "2025-05-01"
-        cv.put("check_out", checkOut); // e.g., "2025-05-05"
+        cv.put("check_in", checkIn);
+        cv.put("check_out", checkOut);
         cv.put("person_count", personCount);
         long result = db.insert("bookings", null, cv);
         if(result == -1){
@@ -185,6 +210,7 @@ public class DBHelper extends SQLiteOpenHelper{
         }
     }
 
+    //login validation
     public boolean validateLogin(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM logins WHERE username = ? AND password = ?";
@@ -199,6 +225,8 @@ public class DBHelper extends SQLiteOpenHelper{
         return result;
     }
 
+    //method that gets all records of rooms with availability=1
+    //to populate the room number buttons grid
     public List<Integer> getAvailableRooms(String stayTypeCode) {
         List<Integer> availableRooms = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

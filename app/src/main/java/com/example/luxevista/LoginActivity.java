@@ -1,6 +1,7 @@
 package com.example.luxevista;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -60,27 +61,48 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the username and password from the EditText fields
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
                 DBHelper dbHelper = new DBHelper(LoginActivity.this);
-                Boolean loginSuccess = dbHelper.validateLogin(username, password);
+                Cursor cursor = dbHelper.getUserData(username, password);
 
-                if(loginSuccess==true){
-                    Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+                if (cursor != null && cursor.moveToFirst()) {
+                    int loginIdIndex = cursor.getColumnIndex("login_id");
+                    int usernameIndex = cursor.getColumnIndex("username");
+                    int roleIndex = cursor.getColumnIndex("role");
 
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    }, 1000);
-                }else{
+                    // ✅ Always check if index is valid (not -1)
+                    if (loginIdIndex != -1 && usernameIndex != -1 && roleIndex != -1) {
+                        int loginId = cursor.getInt(loginIdIndex);
+                        String usernameFromDb = cursor.getString(usernameIndex);
+                        String role = cursor.getString(roleIndex);
+
+                        // Start session
+                        SessionManager sessionManager = new SessionManager(LoginActivity.this);
+                        sessionManager.createLoginSession(loginId, usernameFromDb, role);
+
+                        Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }, 1000);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Error reading user data.", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
                     Toast.makeText(LoginActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
                 }
+
+                if (cursor != null) {
+                    cursor.close();
+                }
+
             }
         });
     }
