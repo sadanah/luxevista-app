@@ -67,7 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(success == true){
                     // If they match, navigate to MainActivity
-                    Toast.makeText(RegisterActivity.this, "Invalid username!", Toast.LENGTH_SHORT).show();
+                    DBHelper dbHelper = new DBHelper(RegisterActivity.this);
+                    dbHelper.addRegistration(email, phone, username, password, "Customer");
+                    dbHelper.addLogin(username, password, "Customer");
 
                     new Handler().postDelayed(new Runnable() {
                         @Override

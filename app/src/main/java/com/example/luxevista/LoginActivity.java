@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,8 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                DBHelper dbHelper = new DBHelper(LoginActivity.this);
-                dbHelper.login(username, password, "Customer");
+
                 // Check if username and password match the predefined values
                 //if (username.equals("user") && password.equals("pass123")) {
                     // If they match, navigate to MainActivity
