@@ -69,7 +69,6 @@ public class RegisterActivity extends AppCompatActivity {
                     // If they match, navigate to MainActivity
                     DBHelper dbHelper = new DBHelper(RegisterActivity.this);
                     dbHelper.addRegistration(email, phone, username, password, "Customer");
-                    dbHelper.addLogin(username, password, "Customer");
 
                     new Handler().postDelayed(new Runnable() {
                         @Override

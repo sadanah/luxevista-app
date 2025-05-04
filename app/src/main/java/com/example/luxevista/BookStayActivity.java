@@ -272,7 +272,9 @@ public class BookStayActivity extends AppCompatActivity {
         int userId = 1; // Replace with actual logged-in user ID
         int personCount = 2; // Or let user select persons
         String[] paymentProviders = {"PayPal", "Payoneer", "Credit Card"};
-        String selectedProvider = paymentProviders[payProviderIndex];
+        int safeIndex = Math.max(0, Math.min(payProviderIndex, paymentProviders.length - 1));
+        String selectedProvider = paymentProviders[safeIndex];
+
 
         // Calculate total price
         int days = calculateDaysBetween(checkIn, checkOut);

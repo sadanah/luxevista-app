@@ -1,6 +1,7 @@
 package com.example.luxevista;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 public class SessionManager {
@@ -8,9 +9,7 @@ public class SessionManager {
     private static final String PREF_NAME = "user_session";
 
     // Keys
-    private static final String KEY_LOGIN_ID = "login_id";
-    private static final String KEY_USERNAME = "username";
-    private static final String KEY_ROLE = "role";
+    private static final String KEY_USER_ID = "user_id";
     private static final String IS_LOGGED_IN = "is_logged_in";
 
     SharedPreferences sharedPreferences;
@@ -23,26 +22,16 @@ public class SessionManager {
         editor = sharedPreferences.edit();
     }
 
-    // ✅ Start user session (Save user info)
-    public void createLoginSession(int loginId, String username, String role) {
+    // ✅ Save user_id and login state
+    public void saveSession(int userId) {
         editor.putBoolean(IS_LOGGED_IN, true);
-        editor.putInt(KEY_LOGIN_ID, loginId);
-        editor.putString(KEY_USERNAME, username);
-        editor.putString(KEY_ROLE, role);
+        editor.putInt(KEY_USER_ID, userId);
         editor.apply();
     }
 
-    // ✅ Getters
-    public int getLoginId() {
-        return sharedPreferences.getInt(KEY_LOGIN_ID, -1);
-    }
-
-    public String getUsername() {
-        return sharedPreferences.getString(KEY_USERNAME, null);
-    }
-
-    public String getRole() {
-        return sharedPreferences.getString(KEY_ROLE, null);
+    // ✅ Get user_id of logged-in user
+    public int getUserId() {
+        return sharedPreferences.getInt(KEY_USER_ID, -1);
     }
 
     // ✅ Check if user is logged in
@@ -53,6 +42,12 @@ public class SessionManager {
     // ✅ Logout user (clear session)
     public void logoutUser() {
         editor.clear();
-        editor.apply();
+        editor.commit();
+
+        // After logout, redirect to Login screen
+        Intent i = new Intent(context, LoginActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
 }

@@ -1,44 +1,36 @@
 package com.example.luxevista;
 
 public class Booking {
-    private String date;
-    private String roomType;
-    private String roomNumber;
-    private String checkIn;
-    private String checkOut;
-    private int guestCount;
+    private int bookingId, guestCount;
+    private String checkIn, checkOut, stayType, payProvider, roomNumber;
+    private double payAmount;
 
-    public Booking(String date, String roomType, String roomNumber, String checkIn, String checkOut, int guestCount) {
-        this.date = date;
-        this.roomType = roomType;
-        this.roomNumber = roomNumber;
-        this.checkIn = checkIn;
-        this.checkOut = checkOut;
-        this.guestCount = guestCount;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getRoomType() {
-        return roomType;
-    }
-
+    // Getters and setters
     public String getRoomNumber() {
         return roomNumber;
     }
 
-    public String getCheckIn() {
-        return checkIn;
-    }
+    public int getBookingId() { return bookingId; }
+    public void setBookingId(int bookingId) { this.bookingId = bookingId; }
 
-    public String getCheckOut() {
-        return checkOut;
-    }
+    public String getCheckIn() { return checkIn; }
+    public void setCheckIn(String checkIn) { this.checkIn = checkIn; }
 
-    public int getGuestCount() {
-        return guestCount;
-    }
+    public String getCheckOut() { return checkOut; }
+    public void setCheckOut(String checkOut) { this.checkOut = checkOut; }
+
+    public int getGuestCount() { return guestCount; }
+    public void setGuestCount(int guestCount) { this.guestCount = guestCount; }
+
+    public String getStayType() { return stayType; }
+    public void setStayType(String stayType) { this.stayType = stayType; }
+
+    public double getPayAmount() { return payAmount; }
+    public void setPayAmount(double payAmount) { this.payAmount = payAmount; }
+
+    public String getPayProvider() { return payProvider; }
+    public void setPayProvider(String payProvider) { this.payProvider = payProvider; }
 }
+
+
 
