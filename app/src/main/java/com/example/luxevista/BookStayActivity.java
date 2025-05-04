@@ -73,14 +73,31 @@ public class BookStayActivity extends AppCompatActivity {
     }
 
     private void addRoomNumberButtons() {
-        // Room numbers 101-109 and 201-209
-        for (int i = 101; i <= 109; i++) {
-            createRoomButton(i);
-        }
-        for (int i = 201; i <= 209; i++) {
-            createRoomButton(i);
+        DBHelper dbHelper = new DBHelper(this);
+
+        // Map stay types to database codes
+        String stayTypeText = getIntent().getStringExtra("stay_type");
+        String stayTypeCode = mapStayTypeToCode(stayTypeText);
+
+        // Get available room numbers from DB
+        List<Integer> availableRooms = dbHelper.getAvailableRooms(stayTypeCode);
+
+        for (int roomNumber : availableRooms) {
+            createRoomButton(roomNumber);
         }
     }
+
+    private String mapStayTypeToCode(String stayTypeText) {
+        switch (stayTypeText) {
+            case "Deluxe": return "D";
+            case "Secret Getaway": return "SG";
+            case "Paradise Lost": return "PL";
+            case "Family Fiesta": return "FF";
+            case "Relaxed Stay": return "RS";
+            default: return ""; // Unknown type
+        }
+    }
+
 
     private void createRoomButton(final int roomNumber) {
         final Button roomButton = new Button(this);

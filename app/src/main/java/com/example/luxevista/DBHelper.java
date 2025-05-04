@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelper extends SQLiteOpenHelper{
 
     private Context context;
@@ -40,9 +43,21 @@ public class DBHelper extends SQLiteOpenHelper{
 
         String createStaysTable = "CREATE TABLE stays (" +
                 "stay_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "stay_type INTEGER," +
-                "stay_price INTEGER," +
+                "stay_type TEXT," +
                 "stay_availability BOOLEAN" + ");";
+
+        String populateStays = "INSERT INTO stays (stay_id, stay_type, stay_availability) VALUES " +
+                "(101, 'RS', 1)," +
+                "(102, 'RS', 1)," +
+                "(103, 'RS', 1)," +
+                "(104, 'RS', 1)," +
+                "(105, 'RS', 1)," +
+                "(106, 'RS', 1)," +
+                "(107, 'RS', 1)," +
+                "(108, 'RS', 1)," +
+                "(109, 'RS', 1)," +
+                "(110, 'RS', 1)," +
+                "(111, 'RS', 1);";
 
         String createPaymentsTable = "CREATE TABLE payments (" +
                 "pay_id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -67,6 +82,7 @@ public class DBHelper extends SQLiteOpenHelper{
         db.execSQL(createRegistrationsTable);
         db.execSQL(createLoginsTable);
         db.execSQL(createStaysTable);
+        db.execSQL(populateStays);
         db.execSQL(createPaymentsTable);
         db.execSQL(createBookingsTable);
     }
@@ -174,6 +190,23 @@ public class DBHelper extends SQLiteOpenHelper{
         }
         cursor.close();
         return result;
+    }
+
+    public List<Integer> getAvailableRooms(String stayTypeCode) {
+        List<Integer> availableRooms = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT stay_id FROM stays WHERE stay_type = ? AND stay_availability = 1";
+        Cursor cursor = db.rawQuery(query, new String[]{stayTypeCode});
+
+        if (cursor.moveToFirst()) {
+            do {
+                int stayId = cursor.getInt(cursor.getColumnIndexOrThrow("stay_id"));
+                availableRooms.add(stayId);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return availableRooms;
     }
 
 }
