@@ -30,69 +30,67 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:src="@drawable/ic_pfp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp"
                     android:scaleType="centerCrop"
                     android:padding="8dp" />
 
                 <!-- Username -->
                 <TextView
-                    android:id="@+id/username"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="User_1"
-                    android:textSize="20sp"
+                    android:text="Username"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="24dp" />
-
-                <!-- Profile Details -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Name:"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/fullName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="First Last"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="5dp"/>
 
                 <TextView
+                    android:id="@+id/usernameText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email:"
-                    android:textStyle="bold" />
+                    android:text="Username"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:background="#f0f0f0"
+                    android:layout_marginBottom="15dp"/>
+
+                <!-- Email -->
                 <TextView
-                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="email@example.com"
-                    android:layout_marginBottom="12dp" />
+                    android:text="Email"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"/>
 
                 <TextView
+                    android:id="@+id/emailText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Address:"
-                    android:textStyle="bold" />
+                    android:text="Email"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:background="#f0f0f0"
+                    android:layout_marginBottom="15dp"/>
+
+                <!-- Phone -->
                 <TextView
-                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="123 Street Name"
-                    android:layout_marginBottom="12dp" />
+                    android:text="Phone Number"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"/>
 
                 <TextView
+                    android:id="@+id/phoneText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Phone:"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="+1 234 567 890"
-                    android:layout_marginBottom="12dp" />
+                    android:text="Phone"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:background="#f0f0f0"
+                    android:layout_marginBottom="15dp"/>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

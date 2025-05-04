@@ -68,7 +68,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 ");";
 
         String populateStays = "INSERT INTO stays (stay_id, stay_type, stay_availability) VALUES " +
-                "(101, 'RS', 1), (102, 'RS', 1), (103, 'RS', 1);";
+                "(101, 'RS', 1), (102, 'RS', 1), (103, 'RS', 1), (104, 'RS', 1), (105, 'RS', 1), " +
+                "(106, 'RS', 1), (107, 'RS', 1), (108, 'RS', 1), (109, 'RS', 1), " +
+                "(201, 'RS', 1), (202, 'RS', 1), (203, 'RS', 1), (204, 'RS', 1), (205, 'RS', 1), " +
+                "(206, 'RS', 1), (207, 'RS', 1), (208, 'RS', 1), (209, 'RS', 1), " +
+                "(301, 'FF', 1), (302, 'FF', 1), (303, 'FF', 1), (304, 'FF', 1), (305, 'FF', 1), " +
+                "(306, 'FF', 1), (307, 'FF', 1), (308, 'FF', 1), (309, 'FF', 1), " +
+                "(401, 'PL', 1), (402, 'PL', 1), (403, 'PL', 1), (404, 'PL', 1), (405, 'PL', 1), " +
+                "(406, 'PL', 1), (407, 'PL', 1), (408, 'PL', 1), (409, 'PL', 1), " +
+                "(501, 'PL', 1), (502, 'PL', 1), (503, 'PL', 1), (504, 'PL', 1), (505, 'PL', 1), " +
+                "(506, 'PL', 1), (507, 'PL', 1), (508, 'PL', 1), (509, 'PL', 1), " +
+                "(601, 'SG', 1), (602, 'SG', 1), (603, 'SG', 1), (604, 'SG', 1), (605, 'SG', 1), " +
+                "(606, 'SG', 1), (607, 'SG', 1), (608, 'SG', 1), (609, 'SG', 1), " +
+                "(701, 'SG', 1), (702, 'SG', 1), (703, 'SG', 1), (704, 'SG', 1), (705, 'SG', 1), " +
+                "(706, 'SG', 1), (707, 'SG', 1), (708, 'SG', 1), (709, 'SG', 1), " +
+                "(801, 'D', 1), (802, 'D', 1), (803, 'D', 1), (804, 'D', 1), (805, 'D', 1), " +
+                "(806, 'D', 1), (807, 'D', 1), (808, 'D', 1), (809, 'D', 1), " +
+                "(901, 'D', 1), (902, 'D', 1), (903, 'D', 1), (904, 'D', 1), (905, 'D', 1), " +
+                "(906, 'D', 1), (907, 'D', 1), (908, 'D', 1), (909, 'D', 1);";
 
         db.execSQL(createRegistrationsTable);
         db.execSQL(createStaysTable);
@@ -210,6 +227,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor getUserBookings(int userId) {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM bookings WHERE user_id = ?", new String[]{String.valueOf(userId)});
+    }
+
+    // Method to get user details based on user_id
+    public Cursor getUserDetails(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM registrations WHERE user_id = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(userId)});
+        return cursor;
     }
 
 }
