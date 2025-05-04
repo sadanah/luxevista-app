@@ -35,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Fetch and display user details
         displayUserDetails(userId);
+        BottomNavHelper.setupBottomNavigation(this);
     }
 
     private void displayUserDetails(int userId) {

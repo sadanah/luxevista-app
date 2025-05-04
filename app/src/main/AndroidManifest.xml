@@ -57,6 +57,9 @@
             android:name=".ProfileActivity">
 
         </activity>
+        <activity android:name=".ExploreSFActivity">
+
+        </activity>
 
     </application>
 

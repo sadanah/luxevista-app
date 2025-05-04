@@ -55,6 +55,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        ImageView exploreSandF = findViewById(R.id.imageFacilitiesServices);
+        exploreSandF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ExploreSFActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Apply insets for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.home), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

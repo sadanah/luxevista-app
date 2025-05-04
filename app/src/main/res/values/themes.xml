@@ -6,7 +6,7 @@
         <item name="android:background">@android:color/white</item>
 
         <!-- Primary color (for action bar, status bar, etc.) -->
-        <item name="colorPrimary">@color/gold</item>
+        <item name="colorPrimary">@color/color1</item>
 
         <!-- Primary dark color (used for dark areas, action bar etc.) -->
         <item name="colorPrimaryDark">@color/black</item>
@@ -26,7 +26,8 @@
         <!-- Button and background highlight color -->
         <item name="colorControlActivated">@color/gold</item>
 
-        <!-- Background of cards, buttons, etc. -->
+        <!-- Set default font family to serif -->
+        <item name="android:fontFamily">serif</item>
 
     </style>
 
