@@ -55,16 +55,18 @@ public class ViewBookingsActivity extends AppCompatActivity {
                 View card = LayoutInflater.from(this).inflate(R.layout.booking_card_layout, bookingsContainer, false);
 
                 TextView bookingSummary = card.findViewById(R.id.bookingSummary);
-                String stayType = null;
-                if(booking.getStayType()=="D"){
+                String stayType;
+
+                // Use .equals() for string comparison
+                if ("D".equals(booking.getStayType())) {
                     stayType = "Deluxe Stay";
-                }else if(booking.getStayType()=="SG"){
+                } else if ("SG".equals(booking.getStayType())) {
                     stayType = "Secret Getaway";
-                }else if(booking.getStayType()=="PL"){
+                } else if ("PL".equals(booking.getStayType())) {
                     stayType = "Paradise Lost";
-                }else if(booking.getStayType()=="FF"){
+                } else if ("FF".equals(booking.getStayType())) {
                     stayType = "Family Fiesta";
-                }else{
+                } else {
                     stayType = "Relaxed Stay";
                 }
 
@@ -76,10 +78,10 @@ public class ViewBookingsActivity extends AppCompatActivity {
                     // Display the booking details in an AlertDialog
                     new AlertDialog.Builder(ViewBookingsActivity.this)
                             .setTitle("Booking Details")
-                            .setMessage("Room Type: " + booking.getStayType() +
+                            .setMessage("Room Type: " + stayType +  // show the readable stay type
                                     "\nCheck-in: " + booking.getCheckIn() +
                                     "\nCheck-out: " + booking.getCheckOut() +
-                                    "\nGuests: " + booking.getGuestCount())
+                                    "\nGuests: " + (booking.getGuestCount()-1))
                             .setPositiveButton("OK", null)
                             .show();
                 });
@@ -87,6 +89,7 @@ public class ViewBookingsActivity extends AppCompatActivity {
                 // Add the card to the bookings container
                 bookingsContainer.addView(card);
             }
+
         }
 
         BottomNavHelper.setupBottomNavigation(this);

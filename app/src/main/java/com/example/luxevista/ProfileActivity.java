@@ -1,7 +1,6 @@
 package com.example.luxevista;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +34,13 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Fetch and display user details
         displayUserDetails(userId);
+
+        // Setup bottom navigation
         BottomNavHelper.setupBottomNavigation(this);
+
+        // Setup logout button
+        Button logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(v -> logout());
     }
 
     private void displayUserDetails(int userId) {
@@ -66,5 +71,14 @@ public class ProfileActivity extends AppCompatActivity {
             Toast.makeText(this, "User details not found", Toast.LENGTH_SHORT).show();
         }
     }
-}
 
+    // Logout method
+    private void logout() {
+        sessionManager.logoutUser(); // Clears session
+        // After logout, go back to LoginActivity (or whatever your login screen is)
+        Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clear back stack
+        startActivity(intent);
+        finish();
+    }
+}
